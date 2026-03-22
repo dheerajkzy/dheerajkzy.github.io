@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dheeraj | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 3em;
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero p {
+    margin-top: 10px;
+    color: #94a3b8;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #38bdf8;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* SECTION */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    width: 300px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* ANIMATIONS */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeUp {
+    from {opacity:0; transform:translateY(30px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #020617;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#patent">Patent</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Dheeraj 👋</h1>
+    <p>Adaptive AUTOSAR Expert | Autonomous Vehicle Software Engineer</p>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="hidden">
+    <h2>About Me</h2>
+    <p>
+        Software engineer specializing in Adaptive AUTOSAR and autonomous vehicle systems.
+        Experienced in building scalable automotive software, system architecture, and
+        real-time embedded platforms.
+    </p>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="hidden">
+    <h2>Experience</h2>
+
+    <div class="card">
+        <h3>MBition GmbH</h3>
+        <p><strong>Expert Software Engineer</strong></p>
+        <p>2022 – Present | Berlin</p>
+    </div>
+
+    <div class="card">
+        <h3>KPIT</h3>
+        <p><strong>Technical Lead</strong></p>
+        <p>2021 – 2022 | Munich</p>
+    </div>
+
+    <div class="card">
+        <h3>KPIT</h3>
+        <p><strong>Senior Software Engineer</strong></p>
+        <p>2018 – 2021 | Munich</p>
+    </div>
+
+    <div class="card">
+        <h3>KPIT</h3>
+        <p><strong>Computer Vision Engineer</strong></p>
+        <p>2015 – 2018 | India</p>
+    </div>
+
+</section>
+
+<!-- PATENT -->
+<section id="patent" class="hidden">
+    <h2>🏆 Innovation & Patent</h2>
+
+    <div class="card">
+        <h3>Pedestrian Detection System</h3>
+        <p>System and method for day and night time pedestrian detection</p>
+        <p><strong>WO2020178668A1</strong></p>
+        <p>Issued Sep 2020</p>
+
+        <a href="https://patents.google.com/patent/WO2020178668A1/en" target="_blank" class="btn">
+            View Patent →
+        </a>
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="hidden">
+    <h2>Skills</h2>
+    <p>
+        Adaptive AUTOSAR • C++ • QNX • SOME/IP • Linux • Bash • 
+        Automotive Ethernet • System Architecture • Autonomous Driving
+    </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="hidden">
+    <h2>Contact</h2>
+    <p>Email: yourmail@gmail.com</p>
+</section>
+
+<footer>
+    <p>© 2026 Dheeraj</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
